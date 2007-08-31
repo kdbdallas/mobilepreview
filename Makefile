@@ -4,7 +4,7 @@ LDFLAGS=-lobjc -framework CoreFoundation -framework Foundation -framework UIKit 
 
 all:	Preview package
 
-TextEdit:	src/MobileTextEdit/main.o src/MobileTextEdit/MobileTextEdit.o
+Preview:	source/main.o source/MobilePreview.o source/MobileStudio/MSAppLauncher.o
 	$(LD) $(LDFLAGS) -o $@ $^
 
 %.o:	%.m
@@ -19,9 +19,10 @@ TextEdit:	src/MobileTextEdit/main.o src/MobileTextEdit/MobileTextEdit.o
 package:
 	rm -rf build
 	mkdir build
-	cp -r ./src/Preview.app ./build
-	mv TextEdit ./build/Preview.app
+	cp -r ./source/Preview.app ./build
+	mv Preview ./build/Preview.app
 
 clean:
-	rm -f src/*.o Preview
+	rm -f source/*.o Preview
+	rm -f source/MobileStudio/*.o
 	rm -rf ./build
