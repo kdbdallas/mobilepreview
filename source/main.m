@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "MobilePreview.h"
+#import "MPApp.h"
 
 int main(int argc, char *argv[])
 {
      NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
-     return UIApplicationMain(argc, argv, [MobilePreview class]);
+     return UIApplicationMain(argc, argv, [MPApp class]);
 }

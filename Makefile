@@ -4,7 +4,7 @@ LDFLAGS=-lobjc -framework CoreFoundation -framework Foundation -framework UIKit 
 
 all:	Preview package
 
-Preview:	source/main.o source/MobilePreview.o source/MobileStudio/MSAppLauncher.o
+Preview:	source/main.o source/MPApp.o source/MPImageViewer.o source/MobileStudio/MSAppLauncher.o
 	$(LD) $(LDFLAGS) -o $@ $^
 
 %.o:	%.m
